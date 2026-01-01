@@ -3,6 +3,12 @@ import { fhirApiRules } from './fhir-api';
 import { hl7IntegrationRules } from './hl7-integration';
 import { telemedicineRules } from './telemedicine';
 import { medicalImagingRules } from './medical-imaging';
+import { ehrIntegrationRules } from './ehr-integration';
+import { clinicalDecisionSupportRules } from './clinical-decision-support';
+import { healthcareMobileAppsRules } from './healthcare-mobile-apps';
+import { medicalAiMlRules } from './medical-ai-ml';
+import { patientPortalRules } from './patient-portal';
+import { pharmacySystemsRules } from './pharmacy-systems';
 
 export interface Author {
   name: string;
@@ -31,7 +37,13 @@ export const rules: Rule[] = [
   ...fhirApiRules,
   ...hl7IntegrationRules,
   ...telemedicineRules,
-  ...medicalImagingRules
+  ...medicalImagingRules,
+  ...ehrIntegrationRules,
+  ...clinicalDecisionSupportRules,
+  ...healthcareMobileAppsRules,
+  ...medicalAiMlRules,
+  ...patientPortalRules,
+  ...pharmacySystemsRules
 ].map(rule => ({
   ...rule,
   libs: rule.libs || []
@@ -110,5 +122,11 @@ export {
   fhirApiRules,
   hl7IntegrationRules,
   telemedicineRules,
-  medicalImagingRules
+  medicalImagingRules,
+  ehrIntegrationRules,
+  clinicalDecisionSupportRules,
+  healthcareMobileAppsRules,
+  medicalAiMlRules,
+  patientPortalRules,
+  pharmacySystemsRules
 };
