@@ -27,7 +27,11 @@ healthcare-directory/
 │           ├── rules/     # Development rules by category
 │           └── mcp/       # Model Context Protocols
 ├── apps/
-│   └── web/              # Web application (coming soon)
+│   └── web/              # Next.js web application
+│       ├── src/
+│       │   ├── app/      # Next.js app router pages
+│       │   └── components/ # React components
+│       └── package.json
 └── package.json          # Workspace configuration
 ```
 
@@ -55,9 +59,37 @@ npm run lint
 npm run format
 ```
 
-## Available Rules
+## Running the Web Application
 
-### HIPAA Compliance
+The Healthcare Directory includes a Next.js web application for browsing and searching development rules.
+
+```bash
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev --workspace=apps/web
+
+# Or navigate to the web app directory
+cd apps/web
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+### Build for Production
+
+```bash
+# Build the web app
+npm run build --workspace=apps/web
+
+# Start production server
+npm run start --workspace=apps/web
+```
+
+## Available Rules (11 Total)
+
+### 1. HIPAA Compliance
 Guidelines for building HIPAA-compliant healthcare applications including:
 - Data encryption (at rest and in transit)
 - Access controls and authentication
@@ -65,33 +97,80 @@ Guidelines for building HIPAA-compliant healthcare applications including:
 - API security
 - Database security
 
-### FHIR API Development
+### 2. FHIR API Development
 Best practices for building FHIR (Fast Healthcare Interoperability Resources) APIs:
 - RESTful API patterns
 - FHIR resource handling (Patient, Observation, Condition, etc.)
 - Search parameters and validation
 - SMART on FHIR authorization
 
-### HL7 Integration
+### 3. HL7 Integration
 Working with HL7 v2.x messaging:
 - Message parsing and generation
 - Common message types (ADT, ORM, ORU, SIU)
 - MLLP (Minimal Lower Layer Protocol)
 - ACK message handling
 
-### Telemedicine Platforms
+### 4. Telemedicine Platforms
 Building secure video consultation systems:
 - WebRTC implementation
 - HIPAA-compliant video conferencing
 - Screen sharing and chat
 - Session recording and audit logging
 
-### Medical Imaging (DICOM)
+### 5. Medical Imaging (DICOM)
 Working with medical imaging data:
 - DICOM file parsing
 - Image display and manipulation
 - DICOMweb API integration
 - Image anonymization
+
+### 6. EHR/EMR Integration
+Integrating with Electronic Health Record systems:
+- Epic and Cerner FHIR APIs
+- OAuth 2.0 authentication
+- HL7 v2 message handling
+- Rate limiting and error handling
+
+### 7. Clinical Decision Support
+Building intelligent clinical decision support systems:
+- Drug interaction checking
+- Allergy alerts
+- Dosing calculators
+- Lab value monitoring
+- AI-powered diagnostics
+
+### 8. Healthcare Mobile Apps
+Developing HIPAA-compliant mobile healthcare applications:
+- React Native security patterns
+- Biometric authentication
+- Encrypted data storage
+- HealthKit and Google Fit integration
+- Offline-first architecture
+
+### 9. Medical AI & Machine Learning
+Building AI/ML systems for healthcare:
+- Medical image classification
+- Clinical NLP and documentation
+- Predictive risk scoring
+- FDA SaMD regulations
+- Model validation and bias mitigation
+
+### 10. Patient Portal Development
+Creating patient-facing healthcare portals:
+- Next.js + Supabase architecture
+- Medical records access
+- Appointment scheduling
+- Secure messaging
+- HIPAA-compliant authentication
+
+### 11. Pharmacy & E-Prescribing
+Building pharmacy management systems:
+- NCPDP SCRIPT e-prescribing
+- Surescripts integration
+- Controlled substance monitoring (PDMP)
+- Medication adherence tracking
+- Inventory management
 
 ## Contributing
 
@@ -133,10 +212,18 @@ export const yourRules = [
 
 ## Tech Stack
 
+### Data Package
 - **Language**: TypeScript
-- **Package Manager**: npm/bun
+- **Package Manager**: npm
 - **Code Quality**: Biome (linting and formatting)
 - **Standards**: FHIR R4, HL7 v2.x, DICOM
+
+### Web Application
+- **Framework**: Next.js 14 (App Router)
+- **UI**: React 18, Tailwind CSS
+- **Markdown**: react-markdown with syntax highlighting
+- **Icons**: Lucide React
+- **Deployment**: Vercel-ready
 
 ## License
 
