@@ -1,0 +1,22 @@
+{
+  "name": "healthcare-directory",
+  "version": "1.0.0",
+  "description": "A community directory for healthcare AI tools, rules, and resources",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspaces",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

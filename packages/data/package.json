@@ -1,0 +1,17 @@
+{
+  "name": "@healthcare-directory/data",
+  "version": "1.0.0",
+  "description": "Healthcare tools and rules data package",
+  "main": "src/index.ts",
+  "exports": {
+    "./rules": "./src/rules/index.ts",
+    "./mcp": "./src/mcp/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
