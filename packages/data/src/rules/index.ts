@@ -94,7 +94,7 @@ export function getSectionBySlug(slug: string): Section | undefined {
 
 // Get a specific rule by slug
 export function getRuleBySlug(slug: string): Rule | undefined {
-  return rules.find(rule => rule.slug === slug || rule.slug === \`official/\${slug}\`);
+  return rules.find(rule => rule.slug === slug || rule.slug === `official/${slug}`);
 }
 
 // Get all tags
