@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace=apps/web",
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspace=apps/web",
+    "build:all": "npm run build --workspaces",
     "lint": "biome check .",
     "format": "biome format --write ."
   },
