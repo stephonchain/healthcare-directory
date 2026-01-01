@@ -4,6 +4,7 @@
   "description": "Healthcare tools and rules data package",
   "main": "src/index.ts",
   "exports": {
+    ".": "./src/index.ts",
     "./rules": "./src/rules/index.ts",
     "./mcp": "./src/mcp/index.ts"
   },
